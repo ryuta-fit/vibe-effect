@@ -1,0 +1,212 @@
+[
+  {
+    "id": "cardUI",
+    "name_ja": "カードレイアウト",
+    "name_en": "Card Layout",
+    "category": "Component",
+    "thumbnail": "/images/card-layout.png",
+    "description": "情報をカード状に分割し視覚的に整理するUIパターン。",
+    "code_snippet": "<div class='card shadow-lg'>\n  <div class='card-content'>\n    <h3>Title</h3>\n    <p>Content</p>\n  </div>\n</div>",
+    "tags": ["card", "material", "shadow", "layout"]
+  },
+  {
+    "id": "breadcrumb",
+    "name_ja": "パンくずリスト",
+    "name_en": "Breadcrumb Navigation",
+    "category": "Navigation",
+    "thumbnail": "/images/breadcrumb.png",
+    "description": "現在位置を階層的に表示するナビゲーションパターン。",
+    "code_snippet": "<nav class='breadcrumb'>\n  <span>Home</span>\n  <span class='separator'>></span>\n  <span>Products</span>\n  <span class='separator'>></span>\n  <span class='current'>Item</span>\n</nav>",
+    "tags": ["navigation", "hierarchy", "path", "location"]
+  },
+  {
+    "id": "accordion",
+    "name_ja": "アコーディオン",
+    "name_en": "Accordion",
+    "category": "Component",
+    "thumbnail": "/images/accordion.png",
+    "description": "コンテンツを折りたたみ式で表示するUIパターン。",
+    "code_snippet": "<div class='accordion'>\n  <div class='accordion-item'>\n    <button class='accordion-header'>Section 1</button>\n    <div class='accordion-content'>Content here</div>\n  </div>\n</div>",
+    "tags": ["collapse", "expand", "toggle", "faq"]
+  },
+  {
+    "id": "hamburger",
+    "name_ja": "ハンバーガーメニュー",
+    "name_en": "Hamburger Menu",
+    "category": "Navigation",
+    "thumbnail": "/images/hamburger.png",
+    "description": "三本線のアイコンで表現されるモバイル向けメニュー。",
+    "code_snippet": "<button class='hamburger-menu'>\n  <span class='line'></span>\n  <span class='line'></span>\n  <span class='line'></span>\n</button>",
+    "tags": ["mobile", "menu", "three-lines", "responsive"]
+  },
+  {
+    "id": "modal",
+    "name_ja": "モーダルダイアログ",
+    "name_en": "Modal Dialog",
+    "category": "Component",
+    "thumbnail": "/images/modal.png",
+    "description": "画面上にオーバーレイ表示されるダイアログボックス。",
+    "code_snippet": "<div class='modal-overlay'>\n  <div class='modal'>\n    <div class='modal-header'>\n      <h2>Title</h2>\n      <button class='close'>×</button>\n    </div>\n    <div class='modal-content'>Content</div>\n  </div>\n</div>",
+    "tags": ["dialog", "popup", "overlay", "lightbox"]
+  },
+  {
+    "id": "tooltip",
+    "name_ja": "ツールチップ",
+    "name_en": "Tooltip",
+    "category": "Component",
+    "thumbnail": "/images/tooltip.png",
+    "description": "要素にホバーした際に表示される説明テキスト。",
+    "code_snippet": "<div class='tooltip-container'>\n  <span class='tooltip-trigger'>Hover me</span>\n  <div class='tooltip'>This is a tooltip</div>\n</div>",
+    "tags": ["hint", "hover", "explanation", "balloon"]
+  },
+  {
+    "id": "dropdown",
+    "name_ja": "ドロップダウンメニュー",
+    "name_en": "Dropdown Menu",
+    "category": "Navigation",
+    "thumbnail": "/images/dropdown.png",
+    "description": "クリックで展開される選択肢メニュー。",
+    "code_snippet": "<div class='dropdown'>\n  <button class='dropdown-toggle'>Menu ▼</button>\n  <ul class='dropdown-menu'>\n    <li><a href='#'>Option 1</a></li>\n    <li><a href='#'>Option 2</a></li>\n  </ul>\n</div>",
+    "tags": ["select", "menu", "options", "expandable"]
+  },
+  {
+    "id": "tabs",
+    "name_ja": "タブナビゲーション",
+    "name_en": "Tab Navigation",
+    "category": "Navigation",
+    "thumbnail": "/images/tabs.png",
+    "description": "コンテンツを切り替えるタブ形式のナビゲーション。",
+    "code_snippet": "<div class='tabs'>\n  <div class='tab-list'>\n    <button class='tab active'>Tab 1</button>\n    <button class='tab'>Tab 2</button>\n  </div>\n  <div class='tab-content'>Content for Tab 1</div>\n</div>",
+    "tags": ["switch", "navigation", "content", "panels"]
+  },
+  {
+    "id": "toggle",
+    "name_ja": "トグルスイッチ",
+    "name_en": "Toggle Switch",
+    "category": "Form",
+    "thumbnail": "/images/toggle.png",
+    "description": "オン・オフの切り替えを行うスイッチ型UI。",
+    "code_snippet": "<label class='toggle'>\n  <input type='checkbox'>\n  <span class='slider'></span>\n</label>",
+    "tags": ["switch", "on-off", "binary", "control"]
+  },
+  {
+    "id": "rangeSlider",
+    "name_ja": "レンジスライダー",
+    "name_en": "Range Slider",
+    "category": "Form",
+    "thumbnail": "/images/range-slider.png",
+    "description": "値の範囲を調整するスライダー型の入力コントロール。",
+    "code_snippet": "<div class='range-slider'>\n  <input type='range' min='0' max='100' value='50'>\n  <div class='range-value'>50</div>\n</div>",
+    "tags": ["input", "range", "value", "control"]
+  },
+  {
+    "id": "checkboxAnim",
+    "name_ja": "アニメーション付きチェックボックス",
+    "name_en": "Animated Checkbox",
+    "category": "Form",
+    "thumbnail": "/images/checkbox.png",
+    "description": "チェック動作にアニメーションを追加したチェックボックス。",
+    "code_snippet": "<label class='checkbox'>\n  <input type='checkbox'>\n  <span class='checkmark'>✓</span>\n  <span class='label'>Check me</span>\n</label>",
+    "tags": ["checkbox", "animation", "check", "form"]
+  },
+  {
+    "id": "radioGroup",
+    "name_ja": "ラジオボタングループ",
+    "name_en": "Radio Button Group",
+    "category": "Form",
+    "thumbnail": "/images/radio.png",
+    "description": "単一選択を行うラジオボタンのグループ。",
+    "code_snippet": "<div class='radio-group'>\n  <label><input type='radio' name='option' value='1'> Option 1</label>\n  <label><input type='radio' name='option' value='2'> Option 2</label>\n</div>",
+    "tags": ["radio", "single-select", "options", "form"]
+  },
+  {
+    "id": "fileUpload",
+    "name_ja": "ファイルアップロード",
+    "name_en": "File Upload",
+    "category": "Form",
+    "thumbnail": "/images/file-upload.png",
+    "description": "ドラッグ&ドロップ対応のファイルアップロード領域。",
+    "code_snippet": "<div class='file-upload' ondrop='handleDrop(event)' ondragover='handleDragOver(event)'>\n  <div class='upload-icon'>📁</div>\n  <p>Drop files here or click to upload</p>\n  <input type='file' multiple hidden>\n</div>",
+    "tags": ["upload", "drag-drop", "file", "form"]
+  },
+  {
+    "id": "searchBar",
+    "name_ja": "検索バー",
+    "name_en": "Search Bar",
+    "category": "Form",
+    "thumbnail": "/images/search.png",
+    "description": "検索機能付きの入力フィールド。",
+    "code_snippet": "<div class='search-bar'>\n  <input type='text' placeholder='Search...' class='search-input'>\n  <button class='search-button'>🔍</button>\n</div>",
+    "tags": ["search", "input", "find", "filter"]
+  },
+  {
+    "id": "toast",
+    "name_ja": "トースト通知",
+    "name_en": "Toast Notification",
+    "category": "Feedback",
+    "thumbnail": "/images/toast.png",
+    "description": "一時的に表示される通知メッセージ。",
+    "code_snippet": "<div class='toast toast-success'>\n  <span class='toast-icon'>✓</span>\n  <span class='toast-message'>Success!</span>\n  <button class='toast-close'>×</button>\n</div>",
+    "tags": ["notification", "message", "alert", "snackbar"]
+  },
+  {
+    "id": "badge",
+    "name_ja": "バッジ・カウンター",
+    "name_en": "Badge Counter",
+    "category": "Component",
+    "thumbnail": "/images/badge.png",
+    "description": "数値や状態を表示する小さなバッジ。",
+    "code_snippet": "<div class='badge-container'>\n  <span class='icon'>🔔</span>\n  <span class='badge'>3</span>\n</div>",
+    "tags": ["counter", "notification", "status", "indicator"]
+  },
+  {
+    "id": "avatarGroup",
+    "name_ja": "アバターグループ",
+    "name_en": "Avatar Group",
+    "category": "Component",
+    "thumbnail": "/images/avatar-group.png",
+    "description": "複数のユーザーアバターを重ねて表示するパターン。",
+    "code_snippet": "<div class='avatar-group'>\n  <img class='avatar' src='user1.jpg' alt='User 1'>\n  <img class='avatar' src='user2.jpg' alt='User 2'>\n  <span class='avatar-count'>+3</span>\n</div>",
+    "tags": ["avatar", "users", "profile", "group"]
+  },
+  {
+    "id": "pagination",
+    "name_ja": "ページネーション",
+    "name_en": "Pagination",
+    "category": "Navigation",
+    "thumbnail": "/images/pagination.png",
+    "description": "ページ間の移動を行うナビゲーション。",
+    "code_snippet": "<div class='pagination'>\n  <button class='page-btn' disabled>‹ Previous</button>\n  <button class='page-btn active'>1</button>\n  <button class='page-btn'>2</button>\n  <button class='page-btn'>3</button>\n  <button class='page-btn'>Next ›</button>\n</div>",
+    "tags": ["paging", "navigation", "pages", "numbers"]
+  },
+  {
+    "id": "timeline",
+    "name_ja": "タイムライン",
+    "name_en": "Timeline",
+    "category": "Layout",
+    "thumbnail": "/images/timeline.png",
+    "description": "時系列でイベントを表示するレイアウト。",
+    "code_snippet": "<div class='timeline'>\n  <div class='timeline-item'>\n    <div class='timeline-marker'></div>\n    <div class='timeline-content'>\n      <h3>Event Title</h3>\n      <p>Event description</p>\n      <time>2024-01-01</time>\n    </div>\n  </div>\n</div>",
+    "tags": ["chronological", "events", "history", "steps"]
+  },
+  {
+    "id": "loading",
+    "name_ja": "ローディングアニメーション",
+    "name_en": "Loading Animation",
+    "category": "Feedback",
+    "thumbnail": "/images/loading.png",
+    "description": "処理中を示すアニメーション表示。",
+    "code_snippet": "<div class='loading'>\n  <div class='spinner'></div>\n  <p>Loading...</p>\n</div>",
+    "tags": ["spinner", "loading", "progress", "waiting"]
+  },
+  {
+    "id": "skeleton",
+    "name_ja": "スケルトンスクリーン",
+    "name_en": "Skeleton Screen",
+    "category": "Feedback",
+    "thumbnail": "/images/skeleton.png",
+    "description": "コンテンツ読み込み中の骨組み表示。",
+    "code_snippet": "<div class='skeleton'>\n  <div class='skeleton-avatar'></div>\n  <div class='skeleton-line'></div>\n  <div class='skeleton-line short'></div>\n</div>",
+    "tags": ["placeholder", "loading", "skeleton", "shimmer"]
+  }
+]
