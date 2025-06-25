@@ -2602,26 +2602,26 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 15px;
+    padding: 12px;
     text-align: center;
 }
 
 .creator-label {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .creator-card-avatar {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #00ff88;
     box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .creator-card-info {
@@ -2630,11 +2630,12 @@ body {
 }
 
 .creator-card-name {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #00ff88;
     margin-bottom: 8px;
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 .creator-card-title {
@@ -2696,7 +2697,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
 }
 
@@ -2732,11 +2733,12 @@ body {
 }
 
 .vibecoding-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #3a86ff;
     margin-bottom: 8px;
     text-shadow: 0 0 20px rgba(58, 134, 255, 0.5);
+    white-space: nowrap;
 }
 
 .vibecoding-desc {
