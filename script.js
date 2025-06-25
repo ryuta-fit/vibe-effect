@@ -1,6 +1,6 @@
 const patterns = [
     // Special Cards
-    { "name": "Creator Info", "height": 340, "demoType": "creator", "category": "制作者", "isCreator": true },
+    { "name": "Creator Info", "height": 340, "demoType": "creator", "isCreator": true },
     { "name": "VibeCoding Salon", "height": 320, "demoType": "vibecoding", "isSpecial": true },
     
     // Original patterns
@@ -2153,6 +2153,14 @@ function createCardElement(pattern, index) {
         prLabel.className = 'pr-label-outer';
         prLabel.textContent = 'PR';
         card.appendChild(prLabel);
+    }
+    
+    // Add 制作者 label for Creator card (outside of card-inner)
+    if (pattern.demoType === 'creator') {
+        const creatorLabel = document.createElement('span');
+        creatorLabel.className = 'pr-label-outer';
+        creatorLabel.textContent = '制作者';
+        card.appendChild(creatorLabel);
     }
     
     // Add click to copy functionality (except for special cards)
