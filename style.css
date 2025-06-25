@@ -2673,6 +2673,97 @@ body {
     cursor: default;
 }
 
+/* VibeCoding Card Styles */
+.vibecoding-card {
+    background: linear-gradient(135deg, #3a86ff 0%, #0a0a0a 100%);
+}
+
+.vibecoding-card .card-inner {
+    background: rgba(10, 10, 10, 0.95);
+}
+
+.vibecoding-card-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 30px;
+    text-align: center;
+}
+
+.vibecoding-logo {
+    margin-bottom: 20px;
+}
+
+.vibe-icon {
+    font-size: 60px;
+    line-height: 1;
+    filter: drop-shadow(0 0 20px rgba(58, 134, 255, 0.6));
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.vibecoding-info {
+    color: #ffffff;
+}
+
+.vibecoding-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #3a86ff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(58, 134, 255, 0.5);
+}
+
+.vibecoding-desc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.vibecoding-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #3a86ff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(58, 134, 255, 0.3);
+}
+
+.vibecoding-link:hover {
+    background: #2a76ef;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(58, 134, 255, 0.5);
+}
+
+.vibecoding-link svg {
+    transition: transform 0.3s ease;
+}
+
+.vibecoding-link:hover svg {
+    transform: translateX(4px);
+}
+
+.vibecoding-card .pattern-name {
+    display: none;
+}
+
+.vibecoding-card:hover {
+    cursor: default;
+}
+
 /* Responsive improvements */
 @media (max-width: 768px) {
     .category-badge {

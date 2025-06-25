@@ -1,6 +1,7 @@
 const patterns = [
-    // Creator Card
+    // Special Cards
     { "name": "Creator Info", "height": 340, "demoType": "creator", "category": "Special", "isCreator": true },
+    { "name": "VibeCoding Salon", "height": 320, "demoType": "vibecoding", "category": "Special", "isSpecial": true },
     
     // Original patterns
     { "name": "Ripple Effect", "height": 300, "demoType": "ripple", "category": "Animation" },
@@ -213,6 +214,24 @@ const demoGenerators = {
                         </svg>
                     </a>
                 </div>
+            </div>
+        </div>
+    `,
+    
+    vibecoding: () => `
+        <div class="vibecoding-card-demo">
+            <div class="vibecoding-logo">
+                <div class="vibe-icon">🦜</div>
+            </div>
+            <div class="vibecoding-info">
+                <h3 class="vibecoding-title">VibeCoding サロン</h3>
+                <p class="vibecoding-desc">バイブコーダーが集まる<br>オンラインコミュニティ</p>
+                <a href="https://vibecoding.salon/" target="_blank" rel="noopener noreferrer" class="vibecoding-link">
+                    <span>サロンを見る</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                </a>
             </div>
         </div>
     `,
@@ -2010,13 +2029,13 @@ function createCards() {
     gallery.innerHTML = '';
     loadedCards = 0;
     
-    // 製作者カードを除外してシャッフル
-    const creatorCard = patterns.find(p => p.isCreator);
-    const otherPatterns = patterns.filter(p => !p.isCreator);
+    // 特別なカードを除外してシャッフル
+    const specialCards = patterns.filter(p => p.isCreator || p.isSpecial);
+    const otherPatterns = patterns.filter(p => !p.isCreator && !p.isSpecial);
     const shuffledOthers = shuffleArray(otherPatterns);
     
-    // 製作者カードを最初に配置
-    const shuffledPatterns = [creatorCard, ...shuffledOthers];
+    // 特別なカードを最初に配置
+    const shuffledPatterns = [...specialCards, ...shuffledOthers];
     
     // 初期表示分のみレンダリング
     loadInitialCards(shuffledPatterns, gallery);
@@ -2071,7 +2090,13 @@ function loadMoreCards(shuffledPatterns, gallery) {
 // カード要素作成を関数化（重複コード削減）
 function createCardElement(pattern, index) {
     const card = document.createElement('div');
-    card.className = pattern.isCreator ? 'card creator-card' : 'card';
+    if (pattern.isCreator) {
+        card.className = 'card creator-card';
+    } else if (pattern.demoType === 'vibecoding') {
+        card.className = 'card vibecoding-card';
+    } else {
+        card.className = 'card';
+    }
     
     // パフォーマンス最適化のプロパティ追加
     card.style.willChange = 'transform';
@@ -2114,8 +2139,8 @@ function createCardElement(pattern, index) {
     cardInner.appendChild(overlay);
     card.appendChild(cardInner);
     
-    // Add click to copy functionality (except for creator card)
-    if (!pattern.isCreator) {
+    // Add click to copy functionality (except for special cards)
+    if (!pattern.isCreator && !pattern.isSpecial) {
         card.addEventListener('click', async (e) => {
             e.preventDefault();
             
