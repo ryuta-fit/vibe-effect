@@ -1,7 +1,7 @@
 const patterns = [
     // Special Cards
     { "name": "Creator Info", "height": 340, "demoType": "creator", "category": "制作者", "isCreator": true },
-    { "name": "VibeCoding Salon", "height": 320, "demoType": "vibecoding", "category": "Special", "isSpecial": true },
+    { "name": "VibeCoding Salon", "height": 320, "demoType": "vibecoding", "isSpecial": true },
     
     // Original patterns
     { "name": "Ripple Effect", "height": 300, "demoType": "ripple", "category": "Animation" },
