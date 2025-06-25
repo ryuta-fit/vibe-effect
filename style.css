@@ -2703,6 +2703,14 @@ body {
     animation: floatIcon 3s ease-in-out infinite;
 }
 
+.vibe-icon-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 20px rgba(58, 134, 255, 0.6));
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
 @keyframes floatIcon {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }

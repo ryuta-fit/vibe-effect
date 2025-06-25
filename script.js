@@ -221,7 +221,7 @@ const demoGenerators = {
     vibecoding: () => `
         <div class="vibecoding-card-demo">
             <div class="vibecoding-logo">
-                <div class="vibe-icon">🦜</div>
+                <img src="vibecoding-owl.png" alt="VibeCoding" class="vibe-icon-img">
             </div>
             <div class="vibecoding-info">
                 <h3 class="vibecoding-title">VibeCoding サロン</h3>
