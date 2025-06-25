@@ -2758,6 +2758,7 @@ body {
     font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
+    white-space: nowrap;
     box-shadow: 0 4px 20px rgba(58, 134, 255, 0.3);
 }
 
