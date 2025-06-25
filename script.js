@@ -176,7 +176,14 @@ const patterns = [
     { "name": "Fluid Tab Underline", "height": 200, "demoType": "fluidTab", "category": "Navigation" },
     { "name": "Mesh Gradient", "height": 350, "demoType": "meshGradient", "category": "Design" },
     { "name": "Emoji Reaction", "height": 250, "demoType": "emojiReaction", "category": "Interaction" },
-    { "name": "Radial Menu", "height": 300, "demoType": "radialMenu", "category": "Navigation" }
+    { "name": "Radial Menu", "height": 300, "demoType": "radialMenu", "category": "Navigation" },
+    
+    // More Trending Effects
+    { "name": "Action Island", "height": 200, "demoType": "actionIsland", "category": "Component" },
+    { "name": "Gesture Trail", "height": 300, "demoType": "gestureTrail", "category": "Interaction" },
+    { "name": "Smart Form", "height": 280, "demoType": "smartForm", "category": "Form" },
+    { "name": "Proximity Hover", "height": 250, "demoType": "proximityHover", "category": "Interaction" },
+    { "name": "Adaptive Icons", "height": 200, "demoType": "adaptiveIcons", "category": "Design" }
 ];
 
 // Demo generators
@@ -1724,6 +1731,59 @@ const demoGenerators = {
             <div class="radial-item"><div class="radial-icon"></div></div>
             <div class="radial-item"><div class="radial-icon"></div></div>
         </div>
+    `,
+    
+    actionIsland: () => `
+        <div class="action-island-demo">
+            <div class="action-island" onclick="toggleActionIsland(this)">
+                <div class="island-icon"></div>
+                <div class="island-content">Recording...</div>
+            </div>
+        </div>
+    `,
+    
+    gestureTrail: () => `
+        <div class="gesture-trail-demo" onmousemove="createTrail(event, this)"></div>
+    `,
+    
+    smartForm: () => `
+        <div class="smart-form-demo">
+            <div class="form-field">
+                <input type="email" class="form-input" placeholder="Email" oninput="validateEmail(this)">
+                <div class="validation-feedback">✓</div>
+                <div class="form-hint">Enter a valid email address</div>
+            </div>
+            <div class="form-field">
+                <input type="password" class="form-input" placeholder="Password" oninput="validatePassword(this)">
+                <div class="validation-feedback">✓</div>
+                <div class="form-hint">8+ characters, include numbers</div>
+            </div>
+        </div>
+    `,
+    
+    proximityHover: () => `
+        <div class="proximity-hover-demo" onmousemove="handleProximity(event, this)">
+            <div class="proximity-item"></div>
+            <div class="proximity-item"></div>
+            <div class="proximity-item"></div>
+        </div>
+    `,
+    
+    adaptiveIcons: () => `
+        <div class="adaptive-icons-demo">
+            <div class="adaptive-icon play-pause" onclick="toggleIcon(this, 'playing')">
+                <div class="icon-shape"></div>
+            </div>
+            <div class="adaptive-icon menu-close" onclick="toggleIcon(this, 'active')">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </div>
+            <div class="adaptive-icon search-clear" onclick="toggleIcon(this, 'active')">
+                <div class="search-circle"></div>
+                <div class="search-handle"></div>
+            </div>
+        </div>
     `
 };
 
@@ -2046,6 +2106,114 @@ window.selectEmoji = function(btn) {
 
 window.toggleRadialMenu = function(demo) {
     demo.classList.toggle('active');
+}
+
+window.toggleActionIsland = function(island) {
+    island.classList.toggle('expanded');
+}
+
+window.createTrail = function(event, demo) {
+    const rect = demo.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    
+    const trail = document.createElement('div');
+    trail.className = 'trail-point';
+    trail.style.left = x + 'px';
+    trail.style.top = y + 'px';
+    
+    demo.appendChild(trail);
+    
+    setTimeout(() => {
+        trail.remove();
+    }, 1000);
+}
+
+window.validateEmail = function(input) {
+    const feedback = input.nextElementSibling;
+    const hint = feedback.nextElementSibling;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (input.value.length > 0) {
+        if (emailRegex.test(input.value)) {
+            input.classList.add('valid');
+            input.classList.remove('invalid');
+            feedback.classList.add('show', 'success');
+            feedback.classList.remove('error');
+            feedback.textContent = '✓';
+            hint.classList.remove('show');
+        } else {
+            input.classList.add('invalid');
+            input.classList.remove('valid');
+            feedback.classList.add('show', 'error');
+            feedback.classList.remove('success');
+            feedback.textContent = '✗';
+            hint.classList.add('show');
+        }
+    } else {
+        input.classList.remove('valid', 'invalid');
+        feedback.classList.remove('show');
+        hint.classList.remove('show');
+    }
+}
+
+window.validatePassword = function(input) {
+    const feedback = input.nextElementSibling;
+    const hint = feedback.nextElementSibling;
+    const hasNumber = /\d/.test(input.value);
+    const isLongEnough = input.value.length >= 8;
+    
+    if (input.value.length > 0) {
+        if (hasNumber && isLongEnough) {
+            input.classList.add('valid');
+            input.classList.remove('invalid');
+            feedback.classList.add('show', 'success');
+            feedback.classList.remove('error');
+            feedback.textContent = '✓';
+            hint.classList.remove('show');
+        } else {
+            input.classList.add('invalid');
+            input.classList.remove('valid');
+            feedback.classList.add('show', 'error');
+            feedback.classList.remove('success');
+            feedback.textContent = '✗';
+            hint.classList.add('show');
+        }
+    } else {
+        input.classList.remove('valid', 'invalid');
+        feedback.classList.remove('show');
+        hint.classList.remove('show');
+    }
+}
+
+window.handleProximity = function(event, demo) {
+    const items = demo.querySelectorAll('.proximity-item');
+    const rect = demo.getBoundingClientRect();
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+    
+    items.forEach(item => {
+        const itemRect = item.getBoundingClientRect();
+        const itemX = itemRect.left - rect.left + itemRect.width / 2;
+        const itemY = itemRect.top - rect.top + itemRect.height / 2;
+        
+        const distance = Math.sqrt(
+            Math.pow(mouseX - itemX, 2) + 
+            Math.pow(mouseY - itemY, 2)
+        );
+        
+        item.classList.remove('near', 'very-near');
+        
+        if (distance < 50) {
+            item.classList.add('very-near');
+        } else if (distance < 100) {
+            item.classList.add('near');
+        }
+    });
+}
+
+window.toggleIcon = function(icon, className) {
+    icon.classList.toggle(className);
 }
 
 // Initialize
