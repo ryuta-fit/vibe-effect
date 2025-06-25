@@ -2704,16 +2704,18 @@ body {
 
 .pr-label {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    left: 0;
     background: rgba(255, 255, 255, 0.2);
     color: #ffffff;
     padding: 4px 8px;
-    border-radius: 4px;
+    border-radius: 0 0 8px 0;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.05em;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: none;
+    border-left: none;
 }
 
 .vibecoding-logo {
