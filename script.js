@@ -198,7 +198,6 @@ const patterns = [
 const demoGenerators = {
     creator: () => `
         <div class="creator-card-demo">
-            <span class="creator-label">製作者</span>
             <img src="profile.jpg" alt="RYUTA" class="creator-card-avatar">
             <div class="creator-card-info">
                 <h3 class="creator-card-name">RYUTA⛰️高知の山奥</h3>
