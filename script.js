@@ -2123,19 +2123,27 @@ function createCardElement(pattern, index) {
     const overlay = document.createElement('div');
     overlay.className = 'overlay';
     
+    // Create a container for pattern name and category
+    const infoContainer = document.createElement('div');
+    infoContainer.style.display = 'flex';
+    infoContainer.style.alignItems = 'center';
+    infoContainer.style.width = '100%';
+    
     const patternName = document.createElement('div');
     patternName.className = 'pattern-name';
     patternName.textContent = pattern.name;
+    
+    infoContainer.appendChild(patternName);
     
     // Add category badge
     if (pattern.category) {
         const categoryBadge = document.createElement('div');
         categoryBadge.className = 'category-badge';
         categoryBadge.textContent = pattern.category;
-        overlay.appendChild(categoryBadge);
+        infoContainer.appendChild(categoryBadge);
     }
     
-    overlay.appendChild(patternName);
+    overlay.appendChild(infoContainer);
     cardInner.appendChild(demoContainer);
     cardInner.appendChild(overlay);
     card.appendChild(cardInner);
