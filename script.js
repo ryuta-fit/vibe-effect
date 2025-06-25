@@ -183,7 +183,14 @@ const patterns = [
     { "name": "Gesture Trail", "height": 300, "demoType": "gestureTrail", "category": "Interaction" },
     { "name": "Smart Form", "height": 280, "demoType": "smartForm", "category": "Form" },
     { "name": "Proximity Hover", "height": 250, "demoType": "proximityHover", "category": "Interaction" },
-    { "name": "Adaptive Icons", "height": 200, "demoType": "adaptiveIcons", "category": "Design" }
+    { "name": "Adaptive Icons", "height": 200, "demoType": "adaptiveIcons", "category": "Design" },
+    
+    // Latest Trending Effects
+    { "name": "Scroll Progress", "height": 250, "demoType": "scrollProgress", "category": "Navigation" },
+    { "name": "Voice Wave", "height": 200, "demoType": "voiceWave", "category": "Audio" },
+    { "name": "Contextual Tooltips", "height": 180, "demoType": "contextualTooltips", "category": "Feedback" },
+    { "name": "Micro Copy", "height": 220, "demoType": "microCopy", "category": "Animation" },
+    { "name": "Ambient Background", "height": 300, "demoType": "ambientBg", "category": "Design" }
 ];
 
 // Demo generators
@@ -1784,6 +1791,83 @@ const demoGenerators = {
                 <div class="search-handle"></div>
             </div>
         </div>
+    `,
+    
+    scrollProgress: () => `
+        <div class="scroll-progress-demo" onscroll="updateScrollProgress(this)">
+            <div class="scroll-progress-bar">
+                <div class="scroll-progress-fill"></div>
+                <div class="section-marker"></div>
+                <div class="section-marker"></div>
+                <div class="section-marker"></div>
+            </div>
+            <div class="scroll-content">
+                <p style="margin-bottom: 100px;">Scroll down to see progress...</p>
+                <p style="margin-bottom: 100px;">Section 1</p>
+                <p style="margin-bottom: 100px;">Section 2</p>
+                <p>Section 3</p>
+            </div>
+        </div>
+    `,
+    
+    voiceWave: () => `
+        <div class="voice-wave-demo">
+            <div class="voice-visualizer">
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+                <div class="wave-bar"></div>
+            </div>
+        </div>
+    `,
+    
+    contextualTooltips: () => `
+        <div class="contextual-tooltip-demo">
+            <div class="tooltip-trigger">
+                ?
+                <div class="tooltip">Basic Tooltip</div>
+            </div>
+            <div class="tooltip-trigger">
+                !
+                <div class="tooltip contextual">Pro Tip: Hover for more</div>
+            </div>
+            <div class="tooltip-trigger">
+                i
+                <div class="tooltip">Information</div>
+            </div>
+        </div>
+    `,
+    
+    microCopy: () => `
+        <div class="micro-copy-demo">
+            <div class="micro-text">
+                <span>Welcome</span> <span>to</span> <span>the</span> <span>future</span>
+            </div>
+            <div class="micro-text" style="animation-delay: 0.5s;">
+                <span>Loading</span> <span>your</span> <span>experience</span>
+                <span class="typing-indicator">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                </span>
+            </div>
+        </div>
+    `,
+    
+    ambientBg: () => `
+        <div class="ambient-bg-demo">
+            <div class="ambient-orb"></div>
+            <div class="ambient-orb"></div>
+            <div class="ambient-orb"></div>
+            <div class="ambient-content">
+                Ambient Mode
+            </div>
+        </div>
     `
 };
 
@@ -2214,6 +2298,28 @@ window.handleProximity = function(event, demo) {
 
 window.toggleIcon = function(icon, className) {
     icon.classList.toggle(className);
+}
+
+window.updateScrollProgress = function(demo) {
+    const scrollContent = demo.querySelector('.scroll-content');
+    const progressFill = demo.querySelector('.scroll-progress-fill');
+    const markers = demo.querySelectorAll('.section-marker');
+    
+    const scrollHeight = scrollContent.scrollHeight - demo.clientHeight;
+    const scrolled = demo.scrollTop;
+    const progress = (scrolled / scrollHeight) * 100;
+    
+    progressFill.style.width = progress + '%';
+    
+    // Update section markers
+    markers.forEach((marker, index) => {
+        const markerPosition = (index + 1) * 25;
+        if (progress >= markerPosition) {
+            marker.classList.add('active');
+        } else {
+            marker.classList.remove('active');
+        }
+    });
 }
 
 // Initialize
