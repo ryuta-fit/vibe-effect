@@ -221,6 +221,7 @@ const demoGenerators = {
     
     vibecoding: () => `
         <div class="vibecoding-card-demo">
+            <span class="pr-label">PR</span>
             <div class="vibecoding-logo">
                 <img src="vibecoding-owl.png" alt="VibeCoding" class="vibe-icon-img">
             </div>

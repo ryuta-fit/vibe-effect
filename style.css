@@ -2699,6 +2699,21 @@ body {
     height: 100%;
     padding: 15px;
     text-align: center;
+    position: relative;
+}
+
+.pr-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .vibecoding-logo {
