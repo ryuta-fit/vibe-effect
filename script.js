@@ -169,7 +169,14 @@ const patterns = [
     { "name": "Y2K Aesthetic", "height": 350, "demoType": "y2kAesthetic", "category": "Retro" },
     { "name": "Minimal Hover", "height": 300, "demoType": "minimalHover", "category": "Interaction" },
     { "name": "Geometric Transition", "height": 400, "demoType": "geometricTransition", "category": "Animation" },
-    { "name": "Color Morph", "height": 320, "demoType": "colorMorph", "category": "Animation" }
+    { "name": "Color Morph", "height": 320, "demoType": "colorMorph", "category": "Animation" },
+    
+    // Trending Effects 2024-2025
+    { "name": "Skeleton Shimmer", "height": 280, "demoType": "skeletonShimmer", "category": "Feedback" },
+    { "name": "Fluid Tab Underline", "height": 200, "demoType": "fluidTab", "category": "Navigation" },
+    { "name": "Mesh Gradient", "height": 350, "demoType": "meshGradient", "category": "Design" },
+    { "name": "Emoji Reaction", "height": 250, "demoType": "emojiReaction", "category": "Interaction" },
+    { "name": "Radial Menu", "height": 300, "demoType": "radialMenu", "category": "Navigation" }
 ];
 
 // Demo generators
@@ -1648,6 +1655,75 @@ const demoGenerators = {
         <div class="color-morph-demo">
             <div class="morph-shape"></div>
         </div>
+    `,
+    
+    // Trending Effects 2024-2025
+    skeletonShimmer: () => `
+        <div class="skeleton-shimmer-demo">
+            <div class="skeleton-avatar"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+        </div>
+    `,
+    
+    fluidTab: () => `
+        <div class="fluid-tab-demo">
+            <div class="fluid-tab active" onclick="moveUnderline(this, 0)">Home</div>
+            <div class="fluid-tab" onclick="moveUnderline(this, 1)">About</div>
+            <div class="fluid-tab" onclick="moveUnderline(this, 2)">Contact</div>
+            <div class="fluid-underline"></div>
+        </div>
+    `,
+    
+    meshGradient: () => `
+        <div class="mesh-gradient-demo"></div>
+    `,
+    
+    emojiReaction: () => `
+        <div class="emoji-reaction-demo">
+            <div class="emoji-btn" onclick="selectEmoji(this)">
+                <span>👍</span>
+                <div class="emoji-particles">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+            </div>
+            <div class="emoji-btn" onclick="selectEmoji(this)">
+                <span>❤️</span>
+                <div class="emoji-particles">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+            </div>
+            <div class="emoji-btn" onclick="selectEmoji(this)">
+                <span>😂</span>
+                <div class="emoji-particles">
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                    <div class="particle"></div>
+                </div>
+            </div>
+        </div>
+    `,
+    
+    radialMenu: () => `
+        <div class="radial-menu-demo" onclick="toggleRadialMenu(this)">
+            <div class="radial-center"></div>
+            <div class="radial-item"><div class="radial-icon"></div></div>
+            <div class="radial-item"><div class="radial-icon"></div></div>
+            <div class="radial-item"><div class="radial-icon"></div></div>
+            <div class="radial-item"><div class="radial-icon"></div></div>
+            <div class="radial-item"><div class="radial-icon"></div></div>
+        </div>
     `
 };
 
@@ -1940,6 +2016,36 @@ function createCardElement(pattern, index) {
     }
     
     return card;
+}
+
+// Helper functions for trending effects
+window.moveUnderline = function(tab, index) {
+    const demo = tab.closest('.fluid-tab-demo');
+    const underline = demo.querySelector('.fluid-underline');
+    const tabs = demo.querySelectorAll('.fluid-tab');
+    
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    
+    underline.style.left = `${index * 33.33}%`;
+}
+
+window.selectEmoji = function(btn) {
+    const demo = btn.closest('.emoji-reaction-demo');
+    const buttons = demo.querySelectorAll('.emoji-btn');
+    
+    buttons.forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    
+    // Reset animation
+    btn.style.animation = 'none';
+    setTimeout(() => {
+        btn.style.animation = '';
+    }, 10);
+}
+
+window.toggleRadialMenu = function(demo) {
+    demo.classList.toggle('active');
 }
 
 // Initialize
