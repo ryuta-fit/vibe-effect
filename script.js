@@ -221,7 +221,6 @@ const demoGenerators = {
     
     vibecoding: () => `
         <div class="vibecoding-card-demo">
-            <span class="pr-label">PR</span>
             <div class="vibecoding-logo">
                 <img src="vibecoding-owl.png" alt="VibeCoding" class="vibe-icon-img">
             </div>
@@ -2140,6 +2139,14 @@ function createCardElement(pattern, index) {
     cardInner.appendChild(demoContainer);
     cardInner.appendChild(overlay);
     card.appendChild(cardInner);
+    
+    // Add PR label for VibeCoding card (outside of card-inner)
+    if (pattern.demoType === 'vibecoding') {
+        const prLabel = document.createElement('span');
+        prLabel.className = 'pr-label-outer';
+        prLabel.textContent = 'PR';
+        card.appendChild(prLabel);
+    }
     
     // Add click to copy functionality (except for special cards)
     if (!pattern.isCreator && !pattern.isSpecial) {
