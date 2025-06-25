@@ -179,7 +179,7 @@ const demoGenerators = {
             <img src="profile.jpg" alt="RYUTA" class="creator-card-avatar">
             <div class="creator-card-info">
                 <h3 class="creator-card-name">RYUTA⛰️高知の山奥</h3>
-                <p class="creator-card-title">整体師/パーソナルトレーナー<br>（百歳製造所 代表）、バイブコーダー</p>
+                <p class="creator-card-title">整体師/トレーナー<br>（百歳製造所 代表）、バイブコーダー</p>
                 <div class="creator-card-links">
                     <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="creator-card-link">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
