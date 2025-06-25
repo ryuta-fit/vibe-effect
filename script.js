@@ -228,7 +228,7 @@ const demoGenerators = {
                 <h3 class="vibecoding-title">VibeCoding サロン</h3>
                 <p class="vibecoding-desc">バイブコーダーが集まる<br>オンラインコミュニティ</p>
                 <a href="https://vibecoding.salon/" target="_blank" rel="noopener noreferrer" class="vibecoding-link">
-                    <span>サロンを見る</span>
+                    <span>詳細を見る</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
                     </svg>
