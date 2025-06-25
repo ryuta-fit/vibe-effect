@@ -1790,7 +1790,13 @@ function createCards() {
     gallery.innerHTML = '';
     loadedCards = 0;
     
-    const shuffledPatterns = shuffleArray(patterns);
+    // 製作者カードを除外してシャッフル
+    const creatorCard = patterns.find(p => p.isCreator);
+    const otherPatterns = patterns.filter(p => !p.isCreator);
+    const shuffledOthers = shuffleArray(otherPatterns);
+    
+    // 製作者カードを最初に配置
+    const shuffledPatterns = [creatorCard, ...shuffledOthers];
     
     // 初期表示分のみレンダリング
     loadInitialCards(shuffledPatterns, gallery);
