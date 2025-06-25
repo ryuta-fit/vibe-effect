@@ -2706,7 +2706,10 @@ body {
 .vibe-icon-img {
     width: 80px;
     height: 80px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #3a86ff;
+    box-shadow: 0 0 20px rgba(58, 134, 255, 0.5);
     filter: drop-shadow(0 0 20px rgba(58, 134, 255, 0.6));
     animation: floatIcon 3s ease-in-out infinite;
 }
