@@ -2606,6 +2606,14 @@ body {
     text-align: center;
 }
 
+.creator-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+}
+
 .creator-card-avatar {
     width: 80px;
     height: 80px;
